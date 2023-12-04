@@ -1,7 +1,7 @@
 Summary:	Much faster locate
 Name:		plocate
 Version:	1.1.18
-Release:	2
+Release:	3
 License:	GPLv2+
 URL:		https://plocate.sesse.net/
 Source0:	https://plocate.sesse.net/download/%{name}-%{version}.tar.gz
@@ -13,7 +13,7 @@ BuildRequires:	pkgconfig(liburing)
 BuildRequires:	pkgconfig(libzstd)
 Requires(pre):	systemd
 %systemd_requires
-%rename	mlocate
+
 
 %description
 plocate is a locate(1) based on posting lists, giving much faster
