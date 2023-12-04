@@ -1,7 +1,7 @@
 Summary:	Much faster locate
 Name:		plocate
-Version:	1.1.18
-Release:	2
+Version:	1.1.19
+Release:	1
 License:	GPLv2+
 URL:		https://plocate.sesse.net/
 Source0:	https://plocate.sesse.net/download/%{name}-%{version}.tar.gz
