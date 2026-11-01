@@ -1,6 +1,6 @@
 Summary:	Much faster locate
 Name:		plocate
-Version:	1.1.24
+Version:	1.1.25
 Release:	1
 License:	GPLv2+
 URL:		https://plocate.sesse.net/
@@ -11,9 +11,6 @@ BuildRequires:	meson
 BuildRequires:	systemd-rpm-macros
 BuildRequires:	pkgconfig(liburing)
 BuildRequires:	pkgconfig(libzstd)
-Requires(pre):	systemd
-%systemd_requires
-
 
 %description
 plocate is a locate(1) based on posting lists, giving much faster
@@ -44,18 +41,6 @@ install -d %{buildroot}%{_presetdir}
 cat > %{buildroot}%{_presetdir}/86-%{name}.preset << EOF
 enable %{name}-updatedb.timer
 EOF
-
-%pre
-%sysusers_create_package %{name} %{SOURCE1}
-
-%post
-%systemd_post %{name}-updatedb.service %{name}-updatedb.timer
-
-%preun
-%systemd_preun %{name}-updatedb.service %{name}-updatedb.timer
-
-%postun
-%systemd_postun_with_restart %{name}-updatedb.service %{name}-updatedb.timer
 
 %files
 %license COPYING
